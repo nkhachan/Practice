@@ -1,0 +1,39 @@
+Only difference betwen class and struct in C++ is the fact
+that default accessibility in struct is public whereas default in class
+is private.
+
+
+Basic Inheritence is the following :
+
+// Parent Class
+class Shape {
+   public:
+    void setColor(string aColor){
+      color = aColor;
+    }
+
+   protected:
+    string color;
+};
+
+// Child Class
+class Rectangle: public Shape {
+  public:
+    void setHeight(int aHeight){
+      height = aHeight;
+    }
+    void setWidth(int aWidth){
+      width = aWidth;
+    }
+  protected:
+    int width;
+    int height;
+};
+
+Access      	  public	protected	private
+Same class	    yes	    yes	      yes
+Derived classes	yes	    yes 	    no
+Outside classes	yes	    no	      no
+
+Derived classes DO NOT inherit :
+Constructors/Destructors/Copy Constructors

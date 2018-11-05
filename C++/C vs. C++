@@ -1,0 +1,36 @@
+1.) C++ doesn't act the same as C in the following situations.
+
+(a) C treats character literals ('a', 'b', etc) like ints, but in C++ they are
+chars.
+
+Ex: In C++, character literals of size 1
+    In C, character literals of size 4 (or whatever the size of an int is)
+
+(b) C requires the keyword struct in order to declare struct objects.
+(c) In C++, struct names defined locally override global variables.
+
+
+#include <stdio.h>
+int T; // global variable
+
+int main()
+{
+    struct T { double x; };
+    return 0;
+}
+
+variable T refers to struct, not integer.
+
+(d) C has no references.
+(e) C uses scanf and printf, while C++ uses streams (cin and cout) for input
+and output operations.
+
+(f) boolean data type is of size 1 in C++, and int in C.
+(g) C++ is object-orientated, (function overloading, templates, inheritence,
+virtual functions, friend functions, etc.)
+
+(h) C++ structures can contain methods.
+Note : Method is a function inside a class and only used in OOP
+       Procedure is a function that doesn't return anything.
+
+(i) C++ structs can contain static members.

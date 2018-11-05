@@ -1,0 +1,38 @@
+Reference vs. Pointers
+
+Similarities
+Both are used to make permanent changes to the variable within a function.
+Save space when passing a large object and then having to return it
+
+Differences
+References cannot be repurposed.
+References cannot be NULL
+References must be declared and initialized at the same time
+
+References are safer because they must be initialized, but they can
+be problematic in these situations.
+1) They refer to an uninitialized pointer
+
+int *ptr;
+int &ref = *ptr;
+
+2) A reference to local variable is returned. This doesn't work because the
+space on the stack frame is deallocated.
+
+int& fun() {
+   int a = 10;
+   return a;
+}
+
+To fix it make :
+
+int a = 10; =>   static int a = 10;
+
+because static means that variable is stored in data segment of application.
+
+Note :
+Static variables are global (not accessible everywhere) meaning there is only
+one for the entire program.
+
+References are also easier to use since they don't need to be dereferenced every
+time.
