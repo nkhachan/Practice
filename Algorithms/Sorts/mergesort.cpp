@@ -78,7 +78,7 @@ void mergesort(std::vector<int> &arr, int beg, int end){
     // Merge the two halves
     merge(arr, beg, mid, end);
   }
-}s
+}
 
 int main(){
 

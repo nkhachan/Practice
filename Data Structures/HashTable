@@ -1,0 +1,16 @@
+A Hash table maps key to values.
+
+It uses a hash function to convert the key into an index in an array
+which stores the associated value for that key. This allows searching with O(1).
+This is the ideal situation where each key maps to an unique index.
+If two elements map to the same index, a common solution is to chain them.
+This would make each element in the array a linked list, which means
+if all the elements are mapping to the same place then searching
+would become O(n) in the worse situation.
+
+An std::unordered_map is implemented as a Hash Table. Searching, Insertion
+and Deletion is O(1)(best), O(n) (worst).
+
+An std::map is ordered. It is implemented as a self-balancing BST. Searching is
+log(n). Insertion and Deletion are also log(n) plus the amount of time taken
+to rebalance the tree.

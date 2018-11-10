@@ -1,0 +1,17 @@
+A path of execution within a process (a single process can contain many threads)
+
+Threads vs Processes
+  - threads have a shared memory space, while processes have different ones
+  - threads share data section, OS resources, code sections
+  - Threads have their own Program counter, register set, and stack pointer
+
+Advantages to threads
+  - Output of execution immediately returned.
+  - Faster Context Switching
+  - Communication between threads is easier
+  - Share resources
+  - Higher throughput
+
+Types of threads
+  - Kernel Level
+  - User Level

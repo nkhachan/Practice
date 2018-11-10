@@ -1,0 +1,62 @@
+A process is an instance of a computer program being executed.
+A process may contain multiple threads of execution.
+
+A process memory has 4 sections :
+  1.) Text section with compiled program code.
+  2.) Data section (global and static variables)
+  3.) Heap for dynamic memory allocation (malloc, new, delete, etc)
+  4.) Stack for local variables
+
+  Note :stack overflow when heaps meet stacks.
+
+Processes have one of 5 states :
+  New (process is being created)
+  Ready (process is ready to be run but CPU is busy)
+  Running (CPU is running process)
+  Waiting or Blocked (process is waiting for some external event)
+  Terminated (process complete)
+  Suspended Ready = when ready queue is full, processes move here
+  Suspended Block = when waiting queue is full, processes move here
+
+Process Control Block
+  Each process is represented by a PCB, which contains the following
+  info:
+
+  Process ID
+  Process state
+  Program counter = the address of the next instruction to be executed.
+  CPU registers = Accumulators, index registers, stack pointers, general
+  purpose registers.
+  Memory-management info = page tables, segment tables
+  Accounting info = CPU time consumed, account numbers, limits
+  I/O Status info = list of I/O devices allocated to process (open files)
+
+In Linux, ps -ef (Process Status)
+Outputs currently running processses:
+  UID = Unix ID of user process is running under
+  PID = Process ID
+  PPID = Process ID of parent process
+  TTY = Terminal Type, name of console or terminal that user logged into
+  CMD = command that launched the process
+
+Program vs Process
+Process is a program that is currently running. A piece of code and
+the binary code is are both programs, and when you run it it becomes
+a process.
+
+Context Switching
+Save the context of Process A and load the context of Process B. Loading
+and unloading from running to ready.
+Occurs when:
+  A high-priority process is ready
+  Interrupt occurs
+  Pre-emptive CPU scheduling
+  User and Kernal mode switch
+
+Note :
+Every CPU generally spends time in 2 modes : User and Kernel mode
+
+Kernel Mode : executing code has unrestricted access to hardware
+used for only trusted functionality since crashes are very problematic
+
+User Mode : code uses system API to access hardware, much safer.
