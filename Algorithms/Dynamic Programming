@@ -1,3 +1,10 @@
+Dynamic Programming : Storing values so that computations can be reused
+
+Tabulation : Bottom Up
+Calculating fib(2), fib(3), ... up till fib(n)
+Memoization: Top Down
+Calculate fib(n), fib(n-1), ... down till fib(3), fib(2)
+
 Ex :
 
 // Computing fibonacci sequence.

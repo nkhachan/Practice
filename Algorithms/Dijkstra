@@ -1,0 +1,4 @@
+Require 3 lists/arrays
+  - Store previous node
+  - Store absolute path from beginning
+  - Store all the remaining nodes to be found

@@ -1,0 +1,25 @@
+Containers
+  Sequential
+    -vector
+    -list
+    -dequeue
+    -arrays
+    -forward_list
+  Adaptors (for Sequential Containers)
+    -queue
+    -priority_queue
+    -stack
+  Associative
+    -set
+    -multiset
+    -map
+      - red-black tree
+      - Search is O(log(n))
+    -multimap
+  Unordered Associative
+    -unordered_map
+      - hash map
+      - Search is O(1)
+    -unordered_multiset
+    -unordered_set
+    -unordered_multimap
