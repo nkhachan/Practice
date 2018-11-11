@@ -2,73 +2,51 @@
 #include <vector>
 
 void printVector(std::vector<int> arr){
-
   for (std::vector<int>::iterator it = arr.begin(); it != arr.end(); ++it)
     std::cout << ' ' << *it;
   std::cout << std::endl;
-
 }
 
-void partition(std::vector<int> &arr, int beg, int mid, int end){
+void swap (int &spot1, int &spot2){
+    int temp = spot1;
+    spot1 = spot2;
+    spot2 = temp;
+}
 
-  // Find sizes of first and second half
-  int firstsize = mid - beg + 1;
-  int secondsize = end - mid;
-
-  std::vector<int> Left(firstsize);
-  std::vector<int> Right(secondsize);
-  // Copy first half over
-  for (int i = 0; i < firstsize; ++i){
-    Left[i] = arr[beg + i];
-  }
-  // Copy second half over
-  for (int i = 0; i < secondsize; ++i){
-    Right[i] = arr[mid + 1 +  i];
-  }
-
-  // Indexes
-  int firstindex = 0;
-  int secondindex = 0;
-  int mergedindex = beg;
-
-  // While there are stil elements to loop through in each
-  // array
-  while ((firstindex < firstsize) && (secondindex < secondsize)){
-
-    // Put the lower element in the current space
-    if (Left[firstindex] <= Right[secondindex]){
-      arr[mergedindex] = Left[firstindex];
-      firstindex++;
-    } else {
-      arr[mergedindex] = Right[secondindex];
-      secondindex++;
+int partition(std::vector<int> &arr, int beg, int end){
+  // Start with end, can also start with beginning, end, random,
+  // or find the median and make that your pivot.
+  int pivot = arr[end];
+  // Index where pivot should be
+  int pivotIndex = beg;
+  // Loop through all elements
+  for (int i = beg; i < end; ++i){
+    // If the elment is less than the pivot, then
+    // move it before the pivotIndex by swapping it
+    // and then move the pivotIndex over, so that it points
+    // back to a place where "higher than pivot" elements exist
+    if (arr[i] <= pivot){
+      swap(arr[pivotIndex], arr[i]);
+      pivotIndex++;
     }
-    ++mergedindex;
   }
-
-  // Copy over Left
-  while (firstindex < firstsize){
-    arr[mergedindex] = Left[firstindex];
-    firstindex++;
-    mergedindex++;
-  }
-
-  // Copy over Right
-  while (secondindex < secondsize){
-    arr[mergedindex] = Left[secondindex];
-    secondindex++;
-    mergedindex++;
-  }
-
+  // Move pivot to the point where it belongs
+  swap(arr[pivotIndex], arr[end]);
+  return pivotIndex;
 }
 
 
 void quicksort(std::vector<int> &arr, int beg, int end){
   if (beg < end){
-    // Index of Partition that is at correct place
-    part = partition(arr, beg, end);
+    // Index of Partition that is at correct place, meaning
+    // All elements before it are less and all after are more.
+    int part = partition(arr, beg, end);
 
-    
+    // Sort the first half
+    quicksort(arr, beg, part - 1);
+    // Sort the second half
+    quicksort(arr, part + 1, end);
+
   }
 }
 
@@ -77,7 +55,7 @@ int main(){
 
   std::vector<int> vect{ 3, 2, 1};
   printVector(vect);
-  mergesort(vect, 0, vect.size() - 1);
+  quicksort(vect, 0, vect.size() - 1);
   printVector(vect);
   return 0;
 }

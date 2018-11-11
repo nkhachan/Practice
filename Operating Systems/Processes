@@ -5,7 +5,7 @@ A process memory has 4 sections :
   1.) Text section with compiled program code.
   2.) Data section (global and static variables)
   3.) Heap for dynamic memory allocation (malloc, new, delete, etc)
-  4.) Stack for local variables
+  4.) Stack for local variables (including references to objects)
 
   Note :stack overflow when heaps meet stacks.
 

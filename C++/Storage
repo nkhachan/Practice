@@ -1,0 +1,14 @@
+Stack :
+-static memory allocation
+-easily accessible (fast access)
+-stores local variables (intrinsic types and references to objects, pointers)
+
+Heap :
+-dynamic memory allocation
+-stores objects
+
+
+Object* o = new Object();
+pointer o is on stack pointing to location on Heap where the object exists.
+
+Note : when the pointer is deleted, the object's destructor is called.
