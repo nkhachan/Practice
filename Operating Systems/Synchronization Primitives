@@ -1,0 +1,29 @@
+
+Producer-Consumer Problem
+- Two processes, producer is generating data, and putting into the
+buffer, and the consumer is removing the data one piece at a time.
+Issue : Producer won't add data to full buffer, and
+Consumer won't take away data from empty buffer
+
+Mutex : mutual exclusion, either producer or consumer has the
+key, or mutex to run. Entire buffer is only accessed by one thread.
+A locking mechanism to synchronize access. Only 1 threads acquires
+mutex.
+PURPOSE : Mutual exclusion (ATOMICITY)
+
+Semaphore : Semaphores is a generalized mutex (not exactly a
+binary mutex). It is a signaling mechanism and can limit the access
+to a resource to fewer threads.
+PURPOSE : Ordered Execution
+
+Notes :
+A single thread can have more than one Mutex
+
+Mutexes can be locked more than once, (and it needs to be unlocked
+that many amount of times, ie it holds a count)
+
+Non-recursive mutexes which lock the mutex twice will cause a deadlock.
+
+Mutex vs Semaphore
+Mutex can only be released by the thread that acquired it.
+Semaphores can be signaled by any other thread.

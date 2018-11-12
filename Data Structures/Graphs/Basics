@@ -1,6 +1,13 @@
 Implementations of Graphs :
-  - Objects and Pointers
-  - Matrix
+  - Objects and Pointers (Node object)
+  - Matrix (Adjacency Matrix)
   - Adjacency List
 
-  
+
+Breadth First Search
+  - Simpler
+  - Find shortest path between nodes (Dijkstra)
+  -
+
+Depth First Search
+  - Better to reach every node more quickly
