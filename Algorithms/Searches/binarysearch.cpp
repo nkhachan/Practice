@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-
+// Time Complexity : O(log(n))
 int binarysearch(std::vector<int>arr, int beg, int end, int target){
   if (end >= beg){
 

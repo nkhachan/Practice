@@ -9,7 +9,6 @@ void printVector(std::vector<int> arr){
 
 }
 
-
 void merge(std::vector<int> &arr, int beg, int mid, int end){
 
   // Find sizes of first and second half
@@ -87,4 +86,5 @@ int main(){
   mergesort(vect, 0, vect.size() - 1);
   printVector(vect);
   return 0;
+  
 }

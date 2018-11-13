@@ -41,12 +41,10 @@ void quicksort(std::vector<int> &arr, int beg, int end){
     // Index of Partition that is at correct place, meaning
     // All elements before it are less and all after are more.
     int part = partition(arr, beg, end);
-
     // Sort the first half
     quicksort(arr, beg, part - 1);
     // Sort the second half
     quicksort(arr, part + 1, end);
-
   }
 }
 

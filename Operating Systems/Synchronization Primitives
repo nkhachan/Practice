@@ -1,4 +1,3 @@
-
 Producer-Consumer Problem
 - Two processes, producer is generating data, and putting into the
 buffer, and the consumer is removing the data one piece at a time.
@@ -27,3 +26,5 @@ Non-recursive mutexes which lock the mutex twice will cause a deadlock.
 Mutex vs Semaphore
 Mutex can only be released by the thread that acquired it.
 Semaphores can be signaled by any other thread.
+
+Monitors :
