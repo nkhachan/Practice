@@ -1,0 +1,5 @@
+Gradle vs Maven
+
+Both are build automation systems
+
+Maven uses an xml file to describe your project and its dependencies.
