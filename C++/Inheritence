@@ -1,4 +1,4 @@
-Only difference betwen class and struct in C++ is the fact
+Only difference between class and struct in C++ is the fact
 that default accessibility in struct is public whereas default in class
 is private.
 

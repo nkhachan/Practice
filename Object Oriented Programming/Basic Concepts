@@ -1,0 +1,42 @@
+What are main features of OOP?
+Encapsulation
+
+  Forces specific APIs to classes
+
+  1.) Restrictions to accessing an objects members, in C++ there are
+  are private, public, and protected members.
+  2.) Bundles of data and methods together
+
+Polymorphism
+
+  The idea that some code behaves differently in different contexts
+  Compile Time Polymorphism :
+    function is decided at compile time
+    Ex: templates, overloading fxn, default arguments
+
+  Run Time Polymorphism :
+    virtual functions resolved at run time, meaning not till
+    runtime do you know that your are using child's functions.
+
+Inheritance
+  Classes can reuse portions of another classes' code due to their
+  relationship.
+
+Abstraction
+  How "real-life" problems are modeled in code
+
+Inheritance vs Composition
+
+Composition : a class containing a member of another class means the class is "composed"
+ of another class
+
+Example :
+
+Game Piece is a class. Imagine there are different types of Game Pieces
+Visible, Solid, and Movable. You could either subclass Game Piece for each type,
+or you could have variables inside the Game Piece that represent what type it is.
+
+Benefits of Inheritance
+You can use function overloading, and each type can have its own functionality
+rather than shoving all functionality into one function. If you have an object to
+represent each type, then each object will need to implement basic functionality. 
